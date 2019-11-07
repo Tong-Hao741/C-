@@ -1,0 +1,33 @@
+//前序 
+void PreOrder(BTNode *b)
+{
+	if(b)
+	{
+		printf("%c",b->data);
+		PreOrder(b->lchild);
+		PreOrder(b->rchild);
+	}
+}
+===============================
+//中序 
+void InOrder(BTNode *b)
+{
+	if(b)
+	{
+		InOrder(b->lchild);
+		printf("%c",b->data);
+		InOrder(b->rchild);
+	}
+}
+===============================
+//后序 
+void PostOrder(BTNode *b)
+{
+	if(b)
+	{
+		
+		PostOrder(b->lchild);
+		PostOrder(b->rchild);
+		printf("%c",b->data);
+	}
+}
