@@ -1,0 +1,44 @@
+//前序非递归遍历
+void PreOrder2(BTNode *b)
+{
+	BTNode *St[MaxSize];
+	int top = -1;
+	top++;
+	St[top] = b;
+	while(top!=-1){
+		b = St[top];
+		printf("%c",b->data);
+		top--;
+		if(b->rchild!=NULL){
+			top++;
+			St[top] = b->rchild;
+		}
+		if(b->lchild!=NULL){
+			top++;
+			St[top] = b->lchild;
+		}
+	}
+} 
+============================
+//中序非递归遍历
+void InOrder2(BTNode *b)
+{
+	BTNode *St[MaxSize];
+	int top = -1;
+	while(b!=NULL||top!=-1){
+		if(b){
+			top++;
+			St[top] = b;
+			b = b->lchild;
+			
+		}
+		else{
+			b = St[top];
+			printf("%c",b->data);
+			top--;
+			b = b->rchild;
+		}
+	}
+} 
+=============================
+//后序我不会哦哦哦！！
